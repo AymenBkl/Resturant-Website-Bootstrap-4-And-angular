@@ -46,9 +46,13 @@
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm col-md col-lg">
-                    <img src="assets/img/logo.png" class="d-flex ml-auto img-fluid">
+                <div class="col-12 col-sm-3 col-md-3 col-lg-3 align-self-center text-center">
+                    <img src="assets/img/logo.png" class="  img-fluid">
                 </div>
+                <div class="col-12 col-sm col-md col-lg align-self-center text-center">
+                    <a class="btn btn-primary text-center" style="padding-left: 50px;padding-right: 50px;" role="button" href="./index.html#reservetable">Reserve Table</a>
+                </div>
+
             </div>
         </div>
     </header>
@@ -78,11 +82,12 @@
             </div>
             <div class="col-12 col-sm">
                 <div class="media">
-                    <img src="assets/img/buffet.png" class="img-fluid d-flex mr-2 mt-4" alt="buffet" >
                     <div class="media-body">
-                        <h2 class="mt-0">Weekend Grand Buffet</h2>
+                        <h2 class="mt-0">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
                         <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
                     </div>
+                    <img src="assets/img/buffet.png" class="img-fluid d-flex mr-2 mt-4" alt="buffet" >
+
                 </div>
                 
             </div>
@@ -94,9 +99,58 @@
             </div>
             <div class="col-12 col-sm order-sm-first">
                 
-                <h2>Alberto Somayya</h2>
-                <h4>Executive Chef</h4>
-                <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+               <div class="media">
+
+                    <img src="assets/img/alberto.png" class="img-fluid d-flex mr-2 mt-4">
+                    <div class="media-body">
+                        <h2 class="mt-0">Alberto Somayya</h2>
+                        <h4>Executive Chef</h4>
+                        <p>Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                    </div>
+
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="reservetable">
+        <div class="row row-content  justify-content-center">
+            <div class="col-8">
+                <div class="card">
+                    <h3 class="card-header text-center bg-primary text-white">Reserve a Table </h3>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="numberg" class="col-12 col-sm-4 col-form-label" >Number of Guests</label>
+                                <div class="col-12 col-sm-8 ">
+                                    <label class="radio-inline"><input type="radio" value="1" name="numberg" id="numberg"> 1 </label>
+                                    <label class="radio-inline"><input type="radio" value="2" name="numberg" id="numberg"> 2 </label>
+                                    <label class="radio-inline"><input type="radio" value="3" name="numberg" id="numberg"> 3 </label>
+                                    <label class="radio-inline"><input type="radio" value="4" name="numberg" id="numberg"> 4 </label>
+                                    <label class="radio-inline"><input type="radio" value="5" name="numberg" id="numberg"> 5 </label>
+                                    <label class="radio-inline"><input type="radio" value="6" name="numberg" id="numberg"> 6 </label>
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="datatime" class="col-12 col-sm-4 col-form-label" >Date And Times</label>
+                                <div class="col-6 col-sm-4">
+                                    <input class="form-control datepicker" type="date" placeholder="Date">
+                                </div>
+                                <div class="col-6 col-sm-4">
+                                    <input class="form-control" type="time" placeholder="Time">
+                                </div>
+                            </div>
+                            <div class="form-group row text-center justify-content-center ">
+
+                                <div class="col-md-9  text-center">
+                                    <button type="submit" class="btn btn-primary ml-auto">Reserve Table</button>
+                                </div>
+        
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
