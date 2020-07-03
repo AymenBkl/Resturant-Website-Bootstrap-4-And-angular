@@ -139,7 +139,16 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                       </a>
+                      <div class="btn-group" id="carouselbtngroup">
+                        <button class="btn btn-danger btn-sm" id="pausebutton">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="resumebutton">
+                          <span class="fa fa-play"></span>
+                      </button>
+                    </div>
                 </div>
+               
             </div>
         </div>
     </div>
@@ -388,6 +397,13 @@
     <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"').tooltip();
+            $('#mycarousel').carousel({interval:2000});
+            $('#pausebutton').click(function() {
+                $('#mycarousel').carousel('pause');
+            });
+            $('#resumebutton').click(function() {
+                $('#mycarousel').carousel('cycle');
+            });
         });
     </script>
 </body>
