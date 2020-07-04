@@ -7,6 +7,11 @@ import { FooterComponent } from './footer/footer.component';
 import { ModalReserveComponent } from './modal-reserve/modal-reserve.component';
 import { LogingComponent } from './loging/loging.component';
 import { CasouelComponent } from './casouel/casouel.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { MenuComponent } from './menu/menu.component';
+import { UsersRouterModule } from './Router/users-router/users-router.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +20,16 @@ import { CasouelComponent } from './casouel/casouel.component';
     FooterComponent,
     ModalReserveComponent,
     LogingComponent,
-    CasouelComponent
+    CasouelComponent,
+    AboutusComponent,
+    ContactusComponent,
+    MenuComponent,
+    HomeComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    UsersRouterModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
