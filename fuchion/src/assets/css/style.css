@@ -9,15 +9,15 @@
   min-height: 400px; }
 
 .footer {
-  background-color: #7086eb;
+  background-color: #ddd;
   margin: 0px auto;
   padding: 20px 0px; }
 
 .jumbotron {
   margin: 0px auto;
-  padding: 70px 30px;
-  background: #7086eb;
-  color: floralwhite; }
+  padding: 70px 70px;
+  background: #ddd;
+  color: rgb(52, 87, 90); }
 
 address {
   font-size: 80%;
@@ -58,7 +58,7 @@ body {
   color: #ddd; }
 
 .modal .modal-body {
-  background-color: #7086eb;
+  background-color: #ddd;
   padding: 15px; }
 
 .modal .btn .btn-secondary {
