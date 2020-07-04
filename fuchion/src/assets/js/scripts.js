@@ -18,9 +18,11 @@ $('#reservetablebutton').click(function(){
         $('#reservetable0').modal('handleUpdate');
         $('#reservetable0').modal('toggle');
     });
-});
+
 $('#navloginbutton').click(function(){
-  console.log("lol");
-    $('#loginmodal').modal('handleUpdate');
-    $('#loginmodal').modal('show');
-})
+      $('#loginmodal').modal('handleUpdate');
+      $('#loginmodal').modal('show');
+    });
+});
+
+

@@ -1,2 +1,39 @@
 node_modules
 dist
+
+fuchion/dist
+fuchion/tmp
+fuchion/out-tsc
+
+# dependencies
+fuchion/node_modules
+
+# IDEs and editors
+fuchion/.idea
+fuchion/.project
+fuchion/.classpath
+fuchion/.c9/
+fuchion/*.launch
+fuchion/.settings/
+fuchion/*.sublime-workspace
+
+# IDE - VSCode
+fuchion/.vscode/*
+fuchion/!.vscode/settings.json
+fuchion/!.vscode/tasks.json
+fuchion/!.vscode/launch.json
+fuchion/!.vscode/extensions.json
+
+# misc
+fuchion/.sass-cache
+fuchion/connect.lock
+fuchion/coverage
+fuchion/libpeerconnection.log
+fuchion/npm-debug.log
+fuchion/yarn-error.log
+fuchion/testem.log
+fuchion/typings
+
+# System Files
+fuchion/.DS_Store
+fuchion/Thumbs.db
