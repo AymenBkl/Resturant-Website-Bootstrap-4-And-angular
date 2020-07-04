@@ -1,4 +1,8 @@
+AOS.init();
+
 $(document).ready(function(){
+    AOS.init();
+
     $('[data-toggle="tooltip"').tooltip();
     $('#mycarousel').carousel({interval:2000});
     $('#carouselbutton').click(function() {
