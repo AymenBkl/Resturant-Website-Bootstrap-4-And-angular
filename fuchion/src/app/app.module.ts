@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ModalReserveComponent } from './modal-reserve/modal-reserve.component';
 import { LogingComponent } from './loging/loging.component';
+import { CasouelComponent } from './casouel/casouel.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { LogingComponent } from './loging/loging.component';
     HeaderComponent,
     FooterComponent,
     ModalReserveComponent,
-    LogingComponent
+    LogingComponent,
+    CasouelComponent
   ],
   imports: [
     BrowserModule
