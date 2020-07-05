@@ -1,3 +1,38 @@
-<p>
-  menu works!
-</p>
+<div class="container-fluid">
+  <div class="row row-content">
+    <div class="col-12">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class=" nav-item"><a class="nav-link active" data-toggle="tab" href="#special" role="tab">Special</a></li>
+        <li class=" nav-item" ><a class="nav-link" data-toggle="tab" href="#secondary" role="tab">Secondary</a></li>
+        <li class=" nav-item"><a class="nav-link" data-toggle="tab" href="#desserts" role="tab">Desserts</a></li>
+        <li class=" nav-item"><a class="nav-link" data-toggle="tab" href="#soda" role="tab">Soda</a></li>
+      </ul>
+    </div>
+    <div class="col-12">
+      <div class="tab-content row-contents">
+        <div id="special" class="tab-pane fade show active" role="tabpanel">
+          <h3>Special</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <app-menuitems></app-menuitems>
+      </div>
+      <div id="secondary" class="tab-pane fade" role="tabpanel">
+        <h3>Secondary</h3>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <app-menuitems></app-menuitems>
+
+      </div>
+      <div id="desserts" class="tab-pane fade" role="tabpanel">
+        <h3>Desserts</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        <app-menuitems></app-menuitems>
+
+      </div>
+      <div id="soda" class="tab-pane fade" role="tabpanel">
+        <h3>Soda</h3>
+        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <app-menuitems></app-menuitems>
+
+      </div>
+    </div>
+  </div>
+</div>

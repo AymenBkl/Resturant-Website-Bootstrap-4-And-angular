@@ -13,6 +13,7 @@ import { MenuComponent } from './menu/menu.component';
 import { UsersRouterModule } from './Router/users-router/users-router.module';
 import { HomeComponent } from './home/home.component';
 import { CarouselleadersComponent } from './carouselleaders/carouselleaders.component';
+import { MenuitemsComponent } from './menuitems/menuitems.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CarouselleadersComponent } from './carouselleaders/carouselleaders.comp
     MenuComponent,
     HomeComponent,
     CarouselleadersComponent,
+    MenuitemsComponent,
   ],
   imports: [
     BrowserModule,
