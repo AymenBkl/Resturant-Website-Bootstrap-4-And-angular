@@ -83,7 +83,8 @@ a {
 .carousel-indicators {
   position: absolute;
   bottom: -100px;
-  display: -webkit-box !important
+  display: -webkit-box !important;
+  align-self: center;
 }
 
 .carousel-indicators li {
@@ -92,7 +93,10 @@ a {
   width: 40px !important;
   height: 40px !important;
   opacity: 0.5;
-  margin: 5px !important
+  margin-right: auto;
+  margin-left: auto;
+  align-self: center;
+  text-align: center;
 }
 
 .carousel-indicators li.active {
