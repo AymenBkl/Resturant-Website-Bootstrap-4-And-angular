@@ -2,10 +2,10 @@
   <div class="row row-content">
     <div class="col-12">
         <ul class="nav nav-tabs nav-justified" role="tablist">
-        <li class=" nav-item"><a class="nav-link active" data-toggle="tab" href="#special" role="tab">Special</a></li>
-        <li class=" nav-item" ><a class="nav-link" data-toggle="tab" href="#secondary" role="tab">Secondary</a></li>
-        <li class=" nav-item"><a class="nav-link" data-toggle="tab" href="#desserts" role="tab">Desserts</a></li>
-        <li class=" nav-item"><a class="nav-link" data-toggle="tab" href="#soda" role="tab">Soda</a></li>
+        <li class=" nav-item" ><a class="nav-link" data-toggle="tab" [routerLink]="['/menu']" [queryParams]="{category : 'special'}"  routerLinkActive="active" role="tab">Special</a></li>
+        <li class=" nav-item" ><a class="nav-link" data-toggle="tab" [routerLink]="['/menu']" [queryParams]="{category : 'secondary'}" routerLinkActive="active" role="tab">Secondary</a></li>
+        <li class=" nav-item"><a class="nav-link" data-toggle="tab" [routerLink]="['/menu']" [queryParams]="{category : 'desserts'}"  routerLinkActive="active" role="tab">Desserts</a></li>
+        <li class=" nav-item"><a class="nav-link" data-toggle="tab" [routerLink]="['/menu']" [queryParams]="{category : 'soda'}"  routerLinkActive="active" role="tab">Soda</a></li>
       </ul>
     </div>
     <div class="col-12">

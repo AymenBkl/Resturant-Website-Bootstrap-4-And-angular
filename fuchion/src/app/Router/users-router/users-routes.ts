@@ -1,6 +1,4 @@
 import {Routes} from '@angular/router';
-import { AppComponent } from 'src/app/app.component';
-import { Component } from '@angular/core';
 import { AboutusComponent } from 'src/app/aboutus/aboutus.component';
 import { ContactusComponent } from 'src/app/contactus/contactus.component';
 import { MenuComponent } from 'src/app/menu/menu.component';
@@ -14,5 +12,6 @@ export const routes : Routes = [
   { path : "aboutus" , component : AboutusComponent},
   { path : "contactus", component : ContactusComponent},
   { path : "menu" , component : MenuComponent},
+  { path : "menu?category",component : MenuComponent},
   { path : "" , redirectTo : "/home" , pathMatch : "full"}
 ]

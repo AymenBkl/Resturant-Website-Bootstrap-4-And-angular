@@ -14,6 +14,7 @@ import { UsersRouterModule } from './Router/users-router/users-router.module';
 import { HomeComponent } from './home/home.component';
 import { CarouselleadersComponent } from './carouselleaders/carouselleaders.component';
 import { MenuitemsComponent } from './menuitems/menuitems.component';
+import { FooddetailComponent } from './fooddetail/fooddetail.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MenuitemsComponent } from './menuitems/menuitems.component';
     HomeComponent,
     CarouselleadersComponent,
     MenuitemsComponent,
+    FooddetailComponent,
   ],
   imports: [
     BrowserModule,
