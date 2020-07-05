@@ -4,17 +4,12 @@
   object-fit: cover;
 }
 
-.row-contents {
-  padding: 50px;
-  margin: 0 auto;
-  text-align: center;
-}
+
 .card {
   margin: 3px;
   align-self: center;
 }
 .card-body {
-  height: 25vw;
   align-self: center;
   margin-top: 2px;
   border : 1px thin black;
