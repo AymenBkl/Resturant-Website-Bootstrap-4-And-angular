@@ -12,6 +12,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { MenuComponent } from './menu/menu.component';
 import { UsersRouterModule } from './Router/users-router/users-router.module';
 import { HomeComponent } from './home/home.component';
+import { CarouselleadersComponent } from './carouselleaders/carouselleaders.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HomeComponent } from './home/home.component';
     ContactusComponent,
     MenuComponent,
     HomeComponent,
+    CarouselleadersComponent,
   ],
   imports: [
     BrowserModule,
