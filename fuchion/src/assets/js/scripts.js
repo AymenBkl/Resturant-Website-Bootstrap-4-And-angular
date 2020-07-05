@@ -5,6 +5,8 @@ $(document).ready(function(){
 
     $('[data-toggle="tooltip"').tooltip();
     $('#mycarousel').carousel({interval:2000});
+    $('#carouselleaders').carousel({interval:2000});
+
     $('#carouselbutton').click(function() {
         if ($('#carouselbutton').children('span').hasClass('fa-pause')){
             $('#mycarousel').carousel('pause');
@@ -27,6 +29,10 @@ $('#navloginbutton').click(function(){
       $('#loginmodal').modal('handleUpdate');
       $('#loginmodal').modal('show');
     });
+
+
+
+
 });
 
 
