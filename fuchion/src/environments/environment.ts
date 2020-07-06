@@ -7,7 +7,7 @@ export const environment = {
 };
 
 
-export const baseURL : string = "https://localhost:3000/"
+export const baseURL : string = "http://localhost:3000/"
 
 /*
  * For easier debugging in development mode, you can import the following file
