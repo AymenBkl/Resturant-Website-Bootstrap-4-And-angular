@@ -15,6 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { CarouselleadersComponent } from './carouselleaders/carouselleaders.component';
 import { MenuitemsComponent } from './menuitems/menuitems.component';
 import { FooddetailComponent } from './fooddetail/fooddetail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FoodsService } from './Services/foods.service';
+import { ProccesHttpMessagesService } from './Services/procces-http-messages.service';
 
 @NgModule({
   declarations: [
@@ -34,10 +37,14 @@ import { FooddetailComponent } from './fooddetail/fooddetail.component';
   ],
   imports: [
     BrowserModule,
-    UsersRouterModule
+    UsersRouterModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [
+    FoodsService,
+    ProccesHttpMessagesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
