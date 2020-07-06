@@ -18,6 +18,9 @@ import { FooddetailComponent } from './fooddetail/fooddetail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FoodsService } from './Services/foods.service';
 import { ProccesHttpMessagesService } from './Services/procces-http-messages.service';
+import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { ProccesHttpMessagesService } from './Services/procces-http-messages.ser
   imports: [
     BrowserModule,
     UsersRouterModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [

@@ -59,7 +59,28 @@
           </span>
 
         <p class="be-comment-text">
-         {{comment.description}}
+         {{comment.comment}}
+        </p>
+      </div>
+    </div>
+    <div class="be-comment" *ngIf="commentForm.valid">
+      <div class="be-img-comment">
+        <a href="blog-detail-2.html">
+          <img src="assets/img/restorant-logo.png" alt="" class="be-ava-comment">
+        </a>
+      </div>
+      <div class="be-comment-content">
+
+          <span class="be-comment-name">
+            <a href="blog-detail-2.html">{{this.commentForm.get('email').value}}</a>
+            </span>
+          <span class="be-comment-time">
+            <i class="fa fa-clock-o"></i>
+            {{this.commentForm.get('date').value | date}}
+          </span>
+
+        <p class="be-comment-text">
+         {{this.commentForm.get('comment').value}}
         </p>
       </div>
     </div>
@@ -71,21 +92,33 @@
       </div>
       <div class="be-comment-content">
 
-      <form novalidate >
+      <form novalidate [formGroup]="commentForm" #formComment="ngForm" (ngSubmit)="onSubmit()" >
 
         <div class="form-group row">
           <div class="col-12">
 
-            <input class="form-control be-comment-text" type="text" placeholder="Your email">
-        </div>
+            <input class="form-control be-comment-text" formControlName="email" type="email" placeholder="Your email">
+            <div *ngIf='formErrors.email' class="alert alert-danger" role="alert">
+              {{formErrors.email}}
+            </div>
+           </div>
       </div>
 
         <div class="form-group row">
           <div class="col-12">
-            <textarea rows=6 class="form-control be-comment-text" type="text" placeholder="Commet"></textarea>
+            <textarea rows=6 class="form-control be-comment-text" formControlName="comment" type="text" placeholder="Commet"></textarea>
+            <div *ngIf='formErrors.comment' class="alert alert-danger" role="alert">
+              {{formErrors.comment}}
+            </div>
+        </div>
+
+
+      </div>
+      <div class="form-group row text-center">
+        <div class="col-12 btn-group text-center">
+          <button type="submit" class="btn btn-secondary" [disabled]="commentForm.invalid">Post Comment</button>
         </div>
       </div>
-
 
       </form>
     </div>

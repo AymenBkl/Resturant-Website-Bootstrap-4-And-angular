@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient  } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { ProccesHttpMessagesService } from './procces-http-messages.service';
 import { Observable  } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -28,5 +28,15 @@ export class FoodsService {
   getFood(id : string) : Observable<Food> {
     return this.httpClient.get<Food>(baseURL + "foods/" +id)
           .pipe(catchError(this.proccesHttpMessage.handleError));
+  }
+
+  putFood(food : Food) : Observable<Food> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this.httpClient.put<Food>(baseURL + "foods/" + food.id , food , httpOptions )
+        .pipe(catchError(this.proccesHttpMessage.handleError));
   }
 }

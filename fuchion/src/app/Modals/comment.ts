@@ -1,6 +1,6 @@
 export class Comment {
   id : string;
   email : string;
-  description : string;
+  comment: string;
   date : string;
 }
