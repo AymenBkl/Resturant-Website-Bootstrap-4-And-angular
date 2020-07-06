@@ -1,23 +1,24 @@
 <div class="container-fluid">
   <div class="row row-contents">
     <div class="col-12">
-      <h1>DISH DETAIL</h1>
+      <h1>DISH DETAILS</h1>
 
     </div>
-    <div class="col-12">
+    <div class="col-md-12" *ngIf="food">
       <div class="card card0 border-0 row-contents">
         <div class="card1 pb-5 row">
         <div class="col-12">
-      <div class="card" data-aos="fade-up">
-        <img class="card-img-top" src="{{mainImage}}" data-aos="fade-right"  alt="Card image cap">
+      <div class="card" >
+        <img class="card-img-top" src="{{mainImage}}"   alt="Card image cap">
         <div class="card-body text-center align-self-center">
-          <h5 class="card-title">Dish</h5>
-          <p class="card-text text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <h3 class="card-title">{{food.name}}</h3>
+          <h5 class="card-title">{{food.price}}</h5>
+          <p class="card-text text-center">{{food.description}}</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
     </div>
-    <div class="col-12">
+    <div class="col-md-12">
       <ol class="carousel-indicators">
         <li *ngFor='let image of images;let i = index' [class.active]="selectedIndex===i" [ngStyle]="{'background-image': 'url(' + image + ')'}" (click)="onClick(image,i)">
         </li>
@@ -27,153 +28,72 @@
 
   </div>
 </div>
-
+<div class="col-md-12" *ngIf="!loaded">
+  <div class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
 </div>
 
 </div>
 
 <div class="container-fluid">
-  <div class="row row-contents">
-    <div class="col-12">
-      <h1 class="text-center">COMMENTS</h1>
+  <div class="be-comment-block">
+    <h1 class="comments-title">Comments ({{food.comments.length}})</h1>
+    <div class="be-comment" *ngFor="let comment of food.comments">
+      <div class="be-img-comment">
+        <a href="blog-detail-2.html">
+          <img src="assets/img/restorant-logo.png" alt="" class="be-ava-comment">
+        </a>
+      </div>
+      <div class="be-comment-content">
+
+          <span class="be-comment-name">
+            <a href="blog-detail-2.html">{{comment.email}}</a>
+            </span>
+          <span class="be-comment-time">
+            <i class="fa fa-clock-o"></i>
+            {{comment.date | date}}
+          </span>
+
+        <p class="be-comment-text">
+         {{comment.description}}
+        </p>
+      </div>
+    </div>
+    <div class="be-comment">
+      <div class="be-img-comment">
+        <a href="blog-detail-2.html">
+          <img src="assets/img/restorant-logo.png" alt="" class="be-ava-comment">
+        </a>
+      </div>
+      <div class="be-comment-content">
+
+      <form novalidate >
+
+        <div class="form-group row">
+          <div class="col-12">
+
+            <input class="form-control be-comment-text" type="text" placeholder="Your email">
+        </div>
+      </div>
+
+        <div class="form-group row">
+          <div class="col-12">
+            <textarea rows=6 class="form-control be-comment-text" type="text" placeholder="Commet"></textarea>
+        </div>
+      </div>
+
+
+      </form>
     </div>
 
-    <div class="col-12">
-      <div class="tab-content">
-        <div class="tab-pane active" id="comments-logout">
-      <ul class="media-list">
-        <li class="media">
-          <a class="pull-left" href="#">
-            <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg" alt="profile">
-          </a>
-          <div class="media-body">
-            <div class="well well-lg">
-                <h4 class="media-heading text-uppercase reviews">Marco </h4>
-                <ul class="media-date text-uppercase reviews list-inline">
-                  <li class="dd">22</li>
-                  <li class="mm">09</li>
-                  <li class="aaaa">2014</li>
-                </ul>
-                <p class="media-comment">
-                  Great snippet! Thanks for sharing.
-                </p>
-                <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyOne"><span class="glyphicon glyphicon-comment"></span> 2 comments</a>
-            </div>
-          </div>
-          <div class="collapse" id="replyOne">
-              <ul class="media-list">
-                  <li class="media media-replied">
-                      <a class="pull-left" href="#">
-                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/ManikRathee/128.jpg" alt="profile">
-                      </a>
-                      <div class="media-body">
-                        <div class="well well-lg">
-                            <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> The Hipster</h4>
-                            <ul class="media-date text-uppercase reviews list-inline">
-                              <li class="dd">22</li>
-                              <li class="mm">09</li>
-                              <li class="aaaa">2014</li>
-                            </ul>
-                            <p class="media-comment">
-                              Nice job Maria.
-                            </p>
-                            <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                        </div>
-                      </div>
-                  </li>
-                  <li class="media media-replied" id="replied">
-                      <a class="pull-left" href="#">
-                        <img class="media-object img-circle" src="https://pbs.twimg.com/profile_images/442656111636668417/Q_9oP8iZ.jpeg" alt="profile">
-                      </a>
-                      <div class="media-body">
-                        <div class="well well-lg">
-                            <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> Mary</h4>
-                            <ul class="media-date text-uppercase reviews list-inline">
-                              <li class="dd">22</li>
-                              <li class="mm">09</li>
-                              <li class="aaaa">2014</li>
-                            </ul>
-                            <p class="media-comment">
-                              Thank you Guys!
-                            </p>
-                            <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                        </div>
-                      </div>
-                  </li>
-              </ul>
-          </div>
-        </li>
-        <li class="media">
-          <a class="pull-left" href="#">
-            <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/kurafire/128.jpg" alt="profile">
-          </a>
-          <div class="media-body">
-            <div class="well well-lg">
-                <h4 class="media-heading text-uppercase reviews">Nico</h4>
-                <ul class="media-date text-uppercase reviews list-inline">
-                  <li class="dd">22</li>
-                  <li class="mm">09</li>
-                  <li class="aaaa">2014</li>
-                </ul>
-                <p class="media-comment">
-                  I'm looking for that. Thanks!
-                </p>
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="//www.youtube.com/embed/80lNjkcp6gI" allowfullscreen></iframe>
-                </div>
-                <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-            </div>
-          </div>
-        </li>
-        <li class="media">
-          <a class="pull-left" href="#">
-            <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/lady_katherine/128.jpg" alt="profile">
-          </a>
-          <div class="media-body">
-            <div class="well well-lg">
-                <h4 class="media-heading text-uppercase reviews">Kriztine</h4>
-                <ul class="media-date text-uppercase reviews list-inline">
-                  <li class="dd">22</li>
-                  <li class="mm">09</li>
-                  <li class="aaaa">2014</li>
-                </ul>
-                <p class="media-comment">
-                  Yehhhh... Thanks for sharing.
-                </p>
-                <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                <a class="btn btn-warning btn-circle text-uppercase" data-toggle="collapse" href="#replyTwo"><span class="glyphicon glyphicon-comment"></span> 1 comment</a>
-            </div>
-          </div>
-          <div class="collapse" id="replyTwo">
-              <ul class="media-list">
-                  <li class="media media-replied">
-                      <a class="pull-left" href="#">
-                        <img class="media-object img-circle" src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg" alt="profile">
-                      </a>
-                      <div class="media-body">
-                        <div class="well well-lg">
-                            <h4 class="media-heading text-uppercase reviews"><span class="glyphicon glyphicon-share-alt"></span> Lizz</h4>
-                            <ul class="media-date text-uppercase reviews list-inline">
-                              <li class="dd">22</li>
-                              <li class="mm">09</li>
-                              <li class="aaaa">2014</li>
-                            </ul>
-                            <p class="media-comment">
-                              Classy!
-                            </p>
-                            <a class="btn btn-info btn-circle text-uppercase" href="#" id="reply"><span class="glyphicon glyphicon-share-alt"></span> Reply</a>
-                        </div>
-                      </div>
-                  </li>
-              </ul>
-          </div>
-        </li>
-      </ul>
     </div>
+
+
+
   </div>
-</div>
-
-</div>
-</div>
+  </div>
 

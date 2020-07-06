@@ -15,5 +15,6 @@ export const routes : Routes = [
   { path : "menu" , component : MenuComponent},
   { path : "menu?category",component : MenuComponent},
   { path : "dishdetail",component : FooddetailComponent},
+  { path : "dishdetail/:id",component : FooddetailComponent},
   { path : "" , redirectTo : "/home" , pathMatch : "full"}
 ]

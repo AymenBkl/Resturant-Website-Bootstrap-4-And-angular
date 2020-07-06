@@ -20,6 +20,13 @@ export class FoodsService {
   }
 
   getFoodCategory() : Observable<Food[]> {
-    return this.httpClient.get<Food[]>(baseURL + "foods?category=special");
+    return this.httpClient.get<Food[]>(baseURL + "foods?category=special")
+    .pipe(catchError(this.proccesHttpMessage.handleError));
+
+  }
+
+  getFood(id : string) : Observable<Food> {
+    return this.httpClient.get<Food>(baseURL + "foods/" +id)
+          .pipe(catchError(this.proccesHttpMessage.handleError));
   }
 }

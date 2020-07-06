@@ -6,7 +6,7 @@ export class Food {
   description : string;
   price : string;
   mainImage : string;
-  images : [];
+  images : string[];
   rate : string;
-  comment : Comment[];
+  comments : Comment[];
 }
