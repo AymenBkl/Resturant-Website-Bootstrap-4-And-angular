@@ -6,6 +6,7 @@ import { Food } from '../Modals/food';
 import {FormGroup , FormBuilder , Validators} from '@angular/forms';
 import { formErrors } from './formErrors';
 import { formValidationMessages } from './formValidationMessage';
+import { Comment } from '../Modals/comment';
 
 @Component({
   selector: 'app-fooddetail',
@@ -19,6 +20,7 @@ export class FooddetailComponent implements OnInit {
   commentForm : FormGroup;
   food : Food;
   selectedIndex : number ;
+  comments : Comment[];
   mainImage : string = 'assets/img/pates.jpg';
   loaded : boolean = false;
   formErrors = formErrors;
@@ -43,12 +45,13 @@ export class FooddetailComponent implements OnInit {
   getFood() : void {
     this.route.params.pipe(
         switchMap((params : Params ) => {
-          return this.foodService.getFood(params['id'])
+          return this.foodService.getFood(params['id']);
         }))
         .subscribe(dish => {
           this.food = dish;
           this.images = dish.images;
           this.mainImage = dish.mainImage;
+          this.comments = dish.comments;
           this.loaded = true;
         },
         error => {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FoodsService } from '../Services/foods.service';
 import { Food } from '../Modals/food';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-menuitems',
@@ -9,15 +10,20 @@ import { Food } from '../Modals/food';
 })
 export class MenuitemsComponent implements OnInit {
 
+
+  category : string;
   foods : Food[];
-  constructor(private foodService : FoodsService) { }
+  constructor(private foodService : FoodsService,
+              private route : ActivatedRoute,
+              private router : Router) {
+                this.getRouteQuery();
+              }
 
   ngOnInit() {
-    this.getFoods();
   }
 
   getFoods() : void {
-    this.foodService.getFoods().
+    this.foodService.getFoodCategory(this.category).
           subscribe(
             foods => {
               this.foods = foods;
@@ -25,6 +31,27 @@ export class MenuitemsComponent implements OnInit {
             error => {
               console.log(error);
             })
+  }
+
+  getRouteQuery() : void {
+    this.router.events.subscribe(val => {
+      if (val instanceof NavigationEnd){
+        const url = val.url;
+        if (url.includes('#')){
+          this.category = url.substring(
+            url.lastIndexOf('=')+1,
+            url.lastIndexOf('#')
+          )
+        }
+        else {
+          this.category = url.substring(
+            url.lastIndexOf('=')+1
+          )
+        }
+        this.foods = null;
+        this.getFoods();
+      }
+    });
   }
 
 }

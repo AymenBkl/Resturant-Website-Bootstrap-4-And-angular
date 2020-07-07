@@ -1,6 +1,10 @@
+
+<div id="{{category}}" class="tab-pane fade show active" role="tabpanel">
+  <h3>{{category | uppercase}}</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 <div class="container pa0 flex justify-center">
 
-<div class="listings card-columns">
+<div class="listings card-columns" *ngIf="foods" data-aos="fade-up">
  <!--
   <div class="flip-card "  *ngFor="let food of foods">
     <div class="flip-card-inner">

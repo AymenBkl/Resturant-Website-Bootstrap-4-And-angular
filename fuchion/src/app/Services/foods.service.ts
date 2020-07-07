@@ -19,8 +19,8 @@ export class FoodsService {
     .pipe(catchError(this.proccesHttpMessage.handleError));
   }
 
-  getFoodCategory() : Observable<Food[]> {
-    return this.httpClient.get<Food[]>(baseURL + "foods?category=special")
+  getFoodCategory(category : string) : Observable<Food[]> {
+    return this.httpClient.get<Food[]>(baseURL + "foods?category="+category)
     .pipe(catchError(this.proccesHttpMessage.handleError));
 
   }
