@@ -56,6 +56,8 @@
     "usemin-cli": "^0.6.0"
   },
   "dependencies": {
+    "@angular/cdk": "^10.0.1",
+    "@angular/material": "^10.0.1",
     "aos": "^2.3.4",
     "bootstrap": "^4.5.0",
     "bootstrap-social": "^5.1.1",

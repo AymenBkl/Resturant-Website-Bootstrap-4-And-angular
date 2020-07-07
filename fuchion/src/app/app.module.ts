@@ -20,6 +20,7 @@ import { FoodsService } from './Services/foods.service';
 import { ProccesHttpMessagesService } from './Services/procces-http-messages.service';
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     UsersRouterModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [

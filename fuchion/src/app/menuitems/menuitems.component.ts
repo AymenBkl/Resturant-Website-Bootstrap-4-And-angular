@@ -49,7 +49,9 @@ export class MenuitemsComponent implements OnInit {
           )
         }
         this.foods = null;
+        console.log(this.foods);
         this.getFoods();
+        console.log(this.foods);
       }
     });
   }

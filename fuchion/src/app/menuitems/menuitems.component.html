@@ -4,7 +4,7 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 <div class="container pa0 flex justify-center">
 
-<div class="listings card-columns" *ngIf="foods" data-aos="fade-up">
+<div class="listings card-columns" *ngIf="foods != null" data-aos="fade-up">
  <!--
   <div class="flip-card "  *ngFor="let food of foods">
     <div class="flip-card-inner">
@@ -58,6 +58,16 @@
     </div>
   </div>
 </div>
+<div class="row" *ngIf="foods === null">
+  <mat-progress-spinner>
+</mat-progress-spinner>
+<div fxFlex>
+  <mat-spinner color="warn"></mat-spinner>
+  <h4>Loading .... Please wait !</h4>
 </div>
+</div>
+</div>
+</div>
+
 
 
