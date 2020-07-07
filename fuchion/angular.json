@@ -35,7 +35,7 @@
               "./node_modules/popper.js/dist/umd/popper.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js",
               "./src/assets/js/scripts.js",
-              "./src/assets/js/data-aos.js"
+              "../node_modules/aos/dist/aos.js"
             ]
           },
           "configurations": {
