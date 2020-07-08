@@ -27,6 +27,7 @@ export class FooddetailComponent implements OnInit {
   errMess : string;
   errMessComment : string;
   formValidationMessages = formValidationMessages;
+  postComment : boolean = false;
   constructor(private route : ActivatedRoute,
               private foodService : FoodsService,
               private formBuilder : FormBuilder) {
@@ -105,9 +106,11 @@ export class FooddetailComponent implements OnInit {
 
 
   putFood() : void {
+    this.postComment = true;
     this.foodService.putFood(this.food)
       .subscribe(food => {
         this.food = food;
+        this.postComment = false;
       },
       error => {
         this.errMessComment = error;

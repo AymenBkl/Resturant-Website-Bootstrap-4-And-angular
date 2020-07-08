@@ -129,20 +129,20 @@
         <p>{{errMess}}</p>
       </div>
     </div>
-    <div class="be-comment">
+    <div class="be-comment" *ngIf="!errMessComment && !errMess && comments !== null">
       <div class="be-img-comment">
         <a href="blog-detail-2.html">
           <img src="assets/img/restorant-logo.png" alt="" class="be-ava-comment">
         </a>
       </div>
-      <div class="be-comment-content">
+      <div class="be-comment-content" >
 
-      <form novalidate [formGroup]="commentForm" #formComment="ngForm" (ngSubmit)="onSubmit()" >
+      <form class="form-block" novalidate [formGroup]="commentForm" #formComment="ngForm" (ngSubmit)="onSubmit()" >
 
         <div class="form-group row">
           <div class="col-12">
 
-            <input class="form-control be-comment-text" formControlName="email" type="email" placeholder="Your email">
+            <input class="form-control be-comment-text " formControlName="email" type="email" placeholder="Your email">
             <div *ngIf='formErrors.email' class="alert alert-danger" role="alert">
               {{formErrors.email}}
             </div>
@@ -160,12 +160,35 @@
 
       </div>
       <div class="form-group row text-center">
-        <div class="col-12 btn-group text-center">
+        <div class="col-12 d-none d-sm-block btn-group text-center">
           <button type="submit" class="btn btn-secondary" [disabled]="commentForm.invalid">Post Comment</button>
+        </div>
+        <div class="col-12 d-block d-sm-none btn-group text-center">
+          <button type="submit" class="btn btn-secondary" [disabled]="commentForm.invalid">Post</button>
         </div>
       </div>
 
       </form>
+    </div>
+    <div class="row text-center flex justify-center row-contents" *ngIf="postComment && !errMessComment">
+      <div class="col-12 text-center justify-center" >
+
+    <div class="uploader-status text-center loading-indicator tp-section">
+      <h4>Posting.... Please wait !</h4>
+      <div class="text-center">
+        <mat-spinner  class="tp-margin" [value]=50 mode="indeterminate" ></mat-spinner>
+      </div>
+    </div>
+    </div>
+
+    </div>
+    <div class="card1 pb-5 row-contents" *ngIf="errMessComment || errMess">
+      <div class="row px-3">
+      </div>
+      <div class="text-center" *ngIf="errMessComment || errMess">
+        <h3>ERROR</h3>
+        <p>{{errMessComment}}</p>
+      </div>
     </div>
 
     </div>
