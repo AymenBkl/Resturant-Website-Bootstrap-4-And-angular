@@ -24,6 +24,8 @@ export class FooddetailComponent implements OnInit {
   mainImage : string = 'assets/img/pates.jpg';
   loaded : boolean = false;
   formErrors = formErrors;
+  errMess : string;
+  errMessComment : string;
   formValidationMessages = formValidationMessages;
   constructor(private route : ActivatedRoute,
               private foodService : FoodsService,
@@ -33,7 +35,6 @@ export class FooddetailComponent implements OnInit {
 
   ngOnInit() {
     this.getFood();
-    console.log(this.loaded);
   }
 
   onClick(image,i) : void {
@@ -43,6 +44,7 @@ export class FooddetailComponent implements OnInit {
 
 
   getFood() : void {
+    this.food = null;
     this.route.params.pipe(
         switchMap((params : Params ) => {
           return this.foodService.getFood(params['id']);
@@ -56,7 +58,7 @@ export class FooddetailComponent implements OnInit {
         },
         error => {
 
-          console.log(error);
+          this.errMess = error;
         } );
   }
 
@@ -108,7 +110,7 @@ export class FooddetailComponent implements OnInit {
         this.food = food;
       },
       error => {
-        console.log(error);
+        this.errMessComment = error;
       })
   }
 

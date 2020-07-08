@@ -8,12 +8,12 @@
       <div class="card card0 border-0">
           <div class="row d-flex">
               <div class="col-12">
-                  <div class="card1 pb-5">
+                  <div class="card1 pb-5" *ngIf="food">
                       <div class="row px-3">
                       </div>
                       <div class="row px-3 justify-content-center mt-4 mb-5 row-contents" >
 
-      <div class="card" *ngIf="food">
+      <div class="card" >
         <img class="card-img-top" src="{{mainImage}}"   alt="Card image cap" data-aos="fade-right">
         <div class="card-body text-center align-self-center">
           <h3 class="card-title">{{food.name}}</h3>
@@ -33,9 +33,23 @@
 
   </div>
 </div>
+<div class="card1 pb-5" *ngIf="food===null">
 
+<div class="row text-center flex justify-center" *ngIf="food === null && !errMess">
+  <div class="col-12 text-center justify-center" >
+
+<div class="uploader-status text-center loading-indicator tp-section">
+  <h4>Loading .... Please wait !</h4>
+  <div class="text-center">
+    <mat-spinner  class="tp-margin" [value]=50 mode="indeterminate" ></mat-spinner>
+  </div>
+</div>
 </div>
 
+</div>
+</div>
+
+</div>
 
 </div>
 </div>

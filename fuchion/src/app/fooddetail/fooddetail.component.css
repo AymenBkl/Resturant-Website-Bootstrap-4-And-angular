@@ -183,5 +183,20 @@ form {
   padding: 15px;
 }
 
+.uploader-status ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #000000;
+  text-align: center;
+  align-self: center;
+}
+.tp-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+.tp-margin {
+  margin: 0 10px;
+}
+
 
 

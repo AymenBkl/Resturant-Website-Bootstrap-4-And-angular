@@ -1,7 +1,13 @@
 
-<div id="{{category}}" class="tab-pane fade show active" role="tabpanel">
+<div id="{{category}}" class="tab-pane text-center fade show active" role="tabpanel">
+  <div class="text-center" *ngIf="!errMess && foods">
   <h3>{{category | uppercase}}</h3>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+<div class="text-center" *ngIf="errMess">
+  <h3>ERROR</h3>
+  <p>{{errMess}}</p>
+</div>
 <div class="container pa0 flex justify-center">
 
 <div class="listings card-columns" *ngIf="foods != null" data-aos="fade-up">
@@ -58,13 +64,17 @@
     </div>
   </div>
 </div>
-<div class="row" *ngIf="foods === null">
-  <mat-progress-spinner>
-</mat-progress-spinner>
-<div fxFlex>
-  <mat-spinner color="warn"></mat-spinner>
+<div class="row text-center flex justify-center" *ngIf="foods === null && !errMess">
+  <div class="col-12 text-center justify-center" >
+
+<div class="uploader-status text-center loading-indicator tp-section">
   <h4>Loading .... Please wait !</h4>
+  <div class="text-center">
+    <mat-spinner  class="tp-margin" [value]=50 mode="indeterminate" ></mat-spinner>
+  </div>
 </div>
+</div>
+
 </div>
 </div>
 </div>

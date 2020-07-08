@@ -13,6 +13,7 @@ export class MenuitemsComponent implements OnInit {
 
   category : string;
   foods : Food[];
+  errMess : string;
   constructor(private foodService : FoodsService,
               private route : ActivatedRoute,
               private router : Router) {
@@ -29,7 +30,7 @@ export class MenuitemsComponent implements OnInit {
               this.foods = foods;
             },
             error => {
-              console.log(error);
+              this.errMess = error;
             })
   }
 
@@ -49,9 +50,7 @@ export class MenuitemsComponent implements OnInit {
           )
         }
         this.foods = null;
-        console.log(this.foods);
         this.getFoods();
-        console.log(this.foods);
       }
     });
   }
