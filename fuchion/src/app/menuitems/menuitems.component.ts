@@ -49,6 +49,9 @@ export class MenuitemsComponent implements OnInit {
             url.lastIndexOf('=')+1
           )
         }
+        if (this.category == '/menu'){
+          this.category = "special"
+        }
         this.foods = null;
         this.getFoods();
       }

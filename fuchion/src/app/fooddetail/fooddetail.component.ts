@@ -54,8 +54,10 @@ export class FooddetailComponent implements OnInit {
         .subscribe(dish => {
           this.food = dish;
           this.images = dish.images;
+          this.images.push(dish.mainImage);
           this.mainImage = dish.mainImage;
           this.comments = dish.comments;
+          console.log(this.comments);
           this.loaded = true;
         },
         error => {

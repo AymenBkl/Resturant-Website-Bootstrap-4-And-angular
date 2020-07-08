@@ -8,6 +8,10 @@
   <h3>ERROR</h3>
   <p>{{errMess}}</p>
 </div>
+<div class="text-center" *ngIf="foods && !errMess && foods.length==0">
+  <h3>SORRY</h3>
+  <p>NO ITEMS ADDED</p>
+</div>
 <div class="container pa0 flex justify-center">
 
 <div class="listings card-columns" *ngIf="foods != null" data-aos="fade-up">
@@ -55,7 +59,7 @@
 -->
 
 
-  <div class="card "  *ngFor="let food of foods" routerLink="['/dishdetail',food.id]">
+  <div class="card "  *ngFor="let food of foods" [routerLink]="['/dishdetail',food.id]">
     <img class="card-img-top" src="{{food.mainImage}}" alt="{{food.name}}">
     <div class="card-body text-center align-self-center">
       <h5 class="card-title">{{food.name}}</h5>
