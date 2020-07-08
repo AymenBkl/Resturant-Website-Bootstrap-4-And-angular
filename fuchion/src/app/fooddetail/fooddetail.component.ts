@@ -45,6 +45,7 @@ export class FooddetailComponent implements OnInit {
 
   getFood() : void {
     this.food = null;
+    this.comments = null;
     this.route.params.pipe(
         switchMap((params : Params ) => {
           return this.foodService.getFood(params['id']);
@@ -57,7 +58,6 @@ export class FooddetailComponent implements OnInit {
           this.loaded = true;
         },
         error => {
-
           this.errMess = error;
         } );
   }
