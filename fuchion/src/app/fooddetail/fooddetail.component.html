@@ -14,7 +14,7 @@
                       <div class="row px-3 justify-content-center mt-4 mb-5 row-contents" >
 
       <div class="card" >
-        <img class="card-img-top" src="{{mainImage}}"   alt="Card image cap" data-aos="fade-right">
+        <img class="card-img-top" src="{{baseURL + mainImage}}"   alt="Card image cap" data-aos="fade-right">
         <div class="card-body text-center align-self-center">
           <h3 class="card-title">{{food.name}}</h3>
           <h5 class="card-title">{{food.price}}</h5>
@@ -25,7 +25,7 @@
     </div>
     <div class="col-md-12">
       <ol class="carousel-indicators">
-        <li *ngFor='let image of images;let i = index' [class.active]="selectedIndex===i" [ngStyle]="{'background-image': 'url(' + image + ')'}" (click)="onClick(image,i)">
+        <li *ngFor='let image of images;let i = index' [class.active]="selectedIndex===i" [ngStyle]="{'background-image': 'url(' + baseURL + image + ')'}" (click)="onClick(image,i)">
         </li>
       </ol>
     </div>

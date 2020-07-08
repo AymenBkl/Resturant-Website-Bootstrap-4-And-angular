@@ -9,8 +9,9 @@ margin-top: 2px;
 border : 1px thin black;
 font-family: monospace;
 padding: 40px;
-
 }
+
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .card-img-top {

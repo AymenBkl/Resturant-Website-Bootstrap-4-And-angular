@@ -21,6 +21,7 @@ import { ProccesHttpMessagesService } from './Services/procces-http-messages.ser
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material';
+import { baseURL } from 'src/environments/environment';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {MatProgressSpinnerModule} from '@angular/material';
   ],
   providers: [
     FoodsService,
-    ProccesHttpMessagesService
+    ProccesHttpMessagesService,
+    {provide : 'baseURL' , useValue : baseURL}
   ],
   bootstrap: [AppComponent]
 })

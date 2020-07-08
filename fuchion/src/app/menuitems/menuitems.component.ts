@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Inject } from '@angular/core';
 import { FoodsService } from '../Services/foods.service';
 import { Food } from '../Modals/food';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
@@ -16,7 +16,8 @@ export class MenuitemsComponent implements OnInit {
   errMess : string;
   constructor(private foodService : FoodsService,
               private route : ActivatedRoute,
-              private router : Router) {
+              private router : Router,
+              @Inject('baseURL') private baseURL) {
                 this.getRouteQuery();
               }
 

@@ -60,7 +60,7 @@
 
 
   <div class="card "  *ngFor="let food of foods" [routerLink]="['/dishdetail',food.id]">
-    <img class="card-img-top" src="{{food.mainImage}}" alt="{{food.name}}">
+    <img class="card-img-top" src='{{baseURL + food.mainImage}}' alt="{{food.name}}">
     <div class="card-body text-center align-self-center">
       <h5 class="card-title">{{food.name}}</h5>
       <p class="card-text">{{food.description}}</p>

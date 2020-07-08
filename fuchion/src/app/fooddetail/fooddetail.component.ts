@@ -1,4 +1,4 @@
-import { Component, OnInit , ViewChild} from '@angular/core';
+import { Component, OnInit , ViewChild , Inject} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { FoodsService } from '../Services/foods.service';
@@ -21,7 +21,7 @@ export class FooddetailComponent implements OnInit {
   food : Food;
   selectedIndex : number ;
   comments : Comment[];
-  mainImage : string = 'assets/img/pates.jpg';
+  mainImage : string;
   loaded : boolean = false;
   formErrors = formErrors;
   errMess : string;
@@ -30,7 +30,8 @@ export class FooddetailComponent implements OnInit {
   postComment : boolean = false;
   constructor(private route : ActivatedRoute,
               private foodService : FoodsService,
-              private formBuilder : FormBuilder) {
+              private formBuilder : FormBuilder,
+              @Inject('baseURL') private baseURL) {
                 this.createForm();
               }
 
@@ -57,7 +58,6 @@ export class FooddetailComponent implements OnInit {
           this.images.push(dish.mainImage);
           this.mainImage = dish.mainImage;
           this.comments = dish.comments;
-          console.log(this.comments);
           this.loaded = true;
         },
         error => {
