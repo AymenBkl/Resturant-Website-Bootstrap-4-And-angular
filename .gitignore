@@ -37,3 +37,6 @@ fuchion/typings
 # System Files
 fuchion/.DS_Store
 fuchion/Thumbs.db
+
+
+json-server-heroku/node_modules
